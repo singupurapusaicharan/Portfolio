@@ -13,7 +13,34 @@ const Hero: React.FC = () => {
       
       <div className="section-container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Profile Image - First on mobile, second on desktop */}
           <motion.div
+            className="flex justify-center order-first lg:order-last"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-2xl opacity-20 animate-pulse-slow"></div>
+              <div className="relative bg-slate-900 border-4 border-slate-800 rounded-full w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 overflow-hidden animate-float">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-600/10 mix-blend-overlay"></div>
+                <img 
+                  src="https://media-hosting.imagekit.io//59c276c0bba84c08/C_pic1.jpg?Expires=1835467247&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=FDp~yZ9l6WgpD97v293FQ30uYol8xO9KbAiz6no7PyJyffHWGQiv9JT1-O-viZBK6QsGPcdgDrsqw-puXo2urxMOMs-rpIyiLFmTvfepEmAYfcCgP5CF6v3Jr3WkaxC~OT-HUbE~1rYlJ9xb1CMNktr0tC9zZwk6K3dflRpqJ9TdqYY49jqZGpmbVR~yka9dShsOP8zcj2LU6ILcWhpKCpVfvl3NGlGl3E7AME7~gza8rdIPn6~adADchuVrfslk9NO9pDkrGZ1R~j5vUl5EkUDIt-CZVfKxp6sbi7diAR1ogBO0LSOIkEhHTNe9YrYxYbBPEc8fZChAyihCke64-Q__" 
+                  alt="Sai Charan" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full animate-bounce-slow"></div>
+              <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-purple-500 rounded-full animate-bounce-slow" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute top-1/2 -right-8 w-6 h-6 bg-blue-400 rounded-full animate-bounce-slow" style={{ animationDelay: '0.5s' }}></div>
+            </div>
+          </motion.div>
+          
+          {/* Text Content - Second on mobile, first on desktop */}
+          <motion.div
+            className="order-last lg:order-first"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -97,30 +124,6 @@ const Hero: React.FC = () => {
                 <Mail size={24} />
               </motion.a>
             </motion.div>
-          </motion.div>
-          
-          <motion.div
-            className="hidden lg:flex justify-center"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-2xl opacity-20 animate-pulse-slow"></div>
-              <div className="relative bg-slate-900 border-4 border-slate-800 rounded-full w-80 h-80 overflow-hidden animate-float">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-600/10 mix-blend-overlay"></div>
-                <img 
-                  src="https://media-hosting.imagekit.io//59c276c0bba84c08/C_pic1.jpg?Expires=1835467247&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=FDp~yZ9l6WgpD97v293FQ30uYol8xO9KbAiz6no7PyJyffHWGQiv9JT1-O-viZBK6QsGPcdgDrsqw-puXo2urxMOMs-rpIyiLFmTvfepEmAYfcCgP5CF6v3Jr3WkaxC~OT-HUbE~1rYlJ9xb1CMNktr0tC9zZwk6K3dflRpqJ9TdqYY49jqZGpmbVR~yka9dShsOP8zcj2LU6ILcWhpKCpVfvl3NGlGl3E7AME7~gza8rdIPn6~adADchuVrfslk9NO9pDkrGZ1R~j5vUl5EkUDIt-CZVfKxp6sbi7diAR1ogBO0LSOIkEhHTNe9YrYxYbBPEc8fZChAyihCke64-Q__" 
-                  alt="Sai Charan" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full animate-bounce-slow"></div>
-              <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-purple-500 rounded-full animate-bounce-slow" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute top-1/2 -right-8 w-6 h-6 bg-blue-400 rounded-full animate-bounce-slow" style={{ animationDelay: '0.5s' }}></div>
-            </div>
           </motion.div>
         </div>
         
