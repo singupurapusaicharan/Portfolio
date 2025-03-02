@@ -142,10 +142,7 @@ This project is configured for easy deployment on Netlify, Vercel, or GitHub Pag
 3. Configure build settings:
    - Build command: `npm run build`
    - Publish directory: `dist`
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+   - 
 
 ## 🙏 Acknowledgements
 
@@ -157,6 +154,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Lucide Icons](https://lucide.dev/)
 - [Unsplash](https://unsplash.com/) for stock images
 
+
 ---
 
-Made with ❤️ by Singupurapu Sai Charan
+If you found this project helpful, please give it a star on GitHub! ⭐️
