@@ -21,3 +21,5 @@ jobs:
           git config --global user.name "GitHub Actions"
           git commit -m "Add built files"
           git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
