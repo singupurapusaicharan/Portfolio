@@ -7,12 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "deploy": "gh-pages -b main -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/drei": "^10.0.8",
-    "@react-three/fiber": "^9.1.2",
+    "@react-three/drei": "^9.94.0",
+    "@react-three/fiber": "^8.16.0",
     "@types/three": "^0.176.0",
     "caniuse-lite": "^1.0.30001718",
     "framer-motion": "^11.0.8",
@@ -23,7 +22,6 @@
     "three": "^0.176.0"
   },
   "devDependencies": {
-    "gh-pages": "^6.0.0",
     "@eslint/js": "^9.9.1",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
