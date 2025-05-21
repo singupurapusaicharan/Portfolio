@@ -13,13 +13,18 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - run: npm install --legacy-peer-deps
+          cache: 'npm'
+      - run: npm ci --legacy-peer-deps
       - run: npm run build
       - run: |
+          # Add dist directory to git
           git add dist
+          # Configure git identity
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
+          # Commit built files
           git commit -m "Add built files"
-          git push origin main
+          # Push to main branch with authentication
+          git push https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
