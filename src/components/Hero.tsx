@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
               <div className="relative bg-slate-900 border-4 border-slate-800 rounded-full w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 overflow-hidden animate-float">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-600/10 mix-blend-overlay"></div>
                 <img 
-                  src="/profile.png" 
+                  src="./profile.png" 
                   alt="Sai Charan" 
                   className="w-full h-full object-cover"
                 />

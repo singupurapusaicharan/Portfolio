@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
     {
       title: "AI-Powered Climate Change Adaptation and Mitigation",
       description: "Designed an AI-powered framework for climate change adaptation and mitigation, enhancing climate impact prediction accuracy by 70%. Published findings at the IEEE ICCPCT conference, highlighting the role of collaboration and innovation in tackling climate challenges.",
-      image: "/placeholder.png",
+      image: "./placeholder.png",
       tags: ["AI", "Climate Change", "Research", "Publication"],
       links: {
         publication: "https://ieeexplore.ieee.org/document/10673384",

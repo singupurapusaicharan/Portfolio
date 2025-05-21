@@ -26,14 +26,14 @@ const ThreeDProjects: React.FC = () => {
     {
       title: "AI-Powered Climate Change Adaptation and Mitigation",
       description: "Designed an AI-powered framework for climate change adaptation and mitigation, enhancing climate impact prediction accuracy by 70%. Published findings at the IEEE ICCPCT conference, highlighting the role of collaboration and innovation in tackling climate challenges.",
-      thumbnail: "/placeholder.png",
+      thumbnail: "./placeholder.png",
       techStack: ["AI", "Climate Change", "Research", "Publication"],
       demoLink: "https://ieeexplore.ieee.org/document/10673384",
       githubLink: "https://github.com/singupurapusaicharan",
       images: [
-        "/placeholder.png",
-        "/placeholder.png",
-        "/placeholder.png"
+        "./placeholder.png",
+        "./placeholder.png",
+        "./placeholder.png"
       ]
     },
     {
