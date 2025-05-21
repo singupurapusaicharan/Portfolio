@@ -107,7 +107,7 @@ const Hero: React.FC = () => {
                 className="group relative flex items-center justify-center gap-4 px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-medium shadow-lg hover:shadow-blue-500/50 transition-all duration-300 overflow-hidden"
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = '/resume.pdf';
+                  link.href = '/Portfolio/resume.pdf';
                   link.download = 'resume.pdf';
                   document.body.appendChild(link);
                   link.click();
