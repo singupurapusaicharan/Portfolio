@@ -11,23 +11,12 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Clean up problematic submodules
-        run: |
-          rm -rf node_modules/.cache/gh-pages
-          git config --global --add safe.directory /home/runner/work/Portfolio/Portfolio
-          
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          clean: true
-          
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -48,6 +37,13 @@ jobs:
         with:
           path: './dist'
           
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
