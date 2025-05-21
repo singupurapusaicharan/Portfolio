@@ -25,6 +25,7 @@ export default defineConfig({
       'Content-Type': 'application/javascript'
     }
   },
+  publicDir: 'public',
   optimizeDeps: {
     exclude: ['lucide-react']
   }
