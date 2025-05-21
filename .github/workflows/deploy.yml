@@ -16,4 +16,7 @@ jobs:
       - run: npm install --legacy-peer-deps
       - run: npm run build
       - run: npm install -g gh-pages
-      - run: gh-pages -d dist
+      - run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+      - run: gh-pages -d dist --repo https://github.com/singupurapusaicharan/Portfolio.git
