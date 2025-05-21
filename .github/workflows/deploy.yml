@@ -15,6 +15,3 @@ jobs:
           node-version: '18'
       - run: npm install --legacy-peer-deps
       - run: npm run build
-      - run: npm run preview
-        env:
-          CI: true
