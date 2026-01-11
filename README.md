@@ -151,6 +151,13 @@ This project is configured for easy deployment on Netlify, Vercel, or GitHub Pag
    - Publish directory: `dist`
 
 
+## 🙏 Acknowledgements
 
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Lucide Icons](https://lucide.dev/)
 
 ---

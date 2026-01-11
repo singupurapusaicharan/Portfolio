@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
             <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
               Singupurapu Sai Charan
             </h2>
-            <p className="text-slate-400 mt-2">Computer Science Undergraduate & Web Developer</p>
+            <p className="text-slate-400 mt-2">Computer Science Undergraduate</p>
           </motion.div>
           
           <div className="flex space-x-6">

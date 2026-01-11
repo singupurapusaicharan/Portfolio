@@ -30,30 +30,26 @@ const Projects: React.FC = () => {
 
   const projects = [
     {
+      title: "GAN-Based Brain Tumor Detection",
+      description: "Fine-tuned VGG19 using transfer learning for brain tumor detection, achieving 94% accuracy with robust evaluation metrics and real-time analysis. Applied preprocessing and GAN-based augmentation to handle limited and imbalanced datasets.",
+      image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1200&q=80",
+      tags: ["GANs", "VGG19", "Transfer Learning", "Medical Imaging"],
+      links: {}
+    },
+    {
+      title: "PDF Quest Hub",
+      description: "Developed an LLM-powered app to query and summarize PDFs, reducing manual document analysis time. Integrated LangChain, FAISS, and Mistral for accurate, context-aware answers, with upload/storage, extraction, and embeddings.",
+      image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80",
+      tags: ["LLM", "LangChain", "FAISS", "Mistral", "PDF"],
+      links: {}
+    },
+    {
       title: "AI-Powered Climate Change Adaptation and Mitigation",
-      description: "Designed an AI-powered framework for climate change adaptation and mitigation, enhancing climate impact prediction accuracy by 70%. Published findings at the IEEE ICCPCT conference, highlighting the role of collaboration and innovation in tackling climate challenges.",
-      image: "./placeholder.png",
-      tags: ["AI", "Climate Change", "Research", "Publication"],
+      description: "Researched AI-driven frameworks for climate adaptation, contributing to models with up to 70% forecast accuracy improvement. Published at IEEE ICCPCT, demonstrating AI’s role in environmental monitoring and forecasting.",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+      tags: ["AI", "Climate", "Forecasting", "IEEE ICCPCT"],
       links: {
         publication: "https://ieeexplore.ieee.org/document/10673384",
-        github: "https://github.com/singupurapusaicharan"
-      }
-    },
-    {
-      title: "Enhanced Brain Tumor Detection through GAN-based Medical Imaging Analysis",
-      description: "Developed a React.js and Flask-based web application integrating GANs and VGG19 for brain tumor detection, achieving real-time analysis of brain scans and reducing diagnosis time by up to 80%, enhancing workflow efficiency for medical professionals.",
-      image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80",
-      tags: ["React.js", "Flask", "GANs", "VGG19", "Medical Imaging", "Research"],
-      links: {
-        github: "https://github.com/singupurapusaicharan"
-      }
-    },
-    {
-      title: "AI Project Management Dashboard",
-      description: "Developed a full-stack AI project management dashboard using Next.js, React, TypeScript, and Tailwind CSS, enabling seamless project tracking, secure user management, and real-time analytics. Integrated SQL-based backend for efficient data handling and authentication.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
-      tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "SQL", "Zustand", "Framer Motion"],
-      links: {
         github: "https://github.com/singupurapusaicharan"
       }
     }

@@ -43,26 +43,8 @@ const About: React.FC = () => {
           </motion.h2>
           
           <motion.p variants={itemVariants} className="text-slate-300 text-lg mb-8 text-center">
-            Highly motivated Computer Science student with a passion for 3D graphics, web development, and innovative solutions.
+            I am a Computer Science undergraduate with a strong academic background and a deep interest in applied Artificial Intelligence and research-driven development. With hands-on experience in medical imaging, document intelligence, and climate analytics, I focus on building AI systems that are both technically sound and practically useful.
           </motion.p>
-          
-          <motion.div variants={itemVariants} className="mt-8 text-center">
-            <h3 className="text-xl font-semibold mb-4">Tech Stack</h3>
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="tech-badge bg-blue-500/10 hover:bg-blue-500/20 transition-colors duration-300 p-3 rounded-lg">
-                <span className="text-blue-400">Three.js</span>
-              </div>
-              <div className="tech-badge bg-purple-500/10 hover:bg-purple-500/20 transition-colors duration-300 p-3 rounded-lg">
-                <span className="text-purple-400">WebGL</span>
-              </div>
-              <div className="tech-badge bg-blue-500/10 hover:bg-blue-500/20 transition-colors duration-300 p-3 rounded-lg">
-                <span className="text-blue-400">React.js</span>
-              </div>
-              <div className="tech-badge bg-purple-500/10 hover:bg-purple-500/20 transition-colors duration-300 p-3 rounded-lg">
-                <span className="text-purple-400">Blender</span>
-              </div>
-            </div>
-          </motion.div>
           
           <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             <motion.div 
@@ -78,7 +60,7 @@ const About: React.FC = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Problem Solver</h3>
                   <p className="text-slate-400">
-                    My creativity allows me to approach problems from different angles, leading to innovative outcomes.
+                    I turn ambiguous real-world problems into clear technical goals and scalable solutions, using strong computer science fundamentals and data-driven evaluation.
                   </p>
                 </div>
               </div>
@@ -95,9 +77,9 @@ const About: React.FC = () => {
                   <Code className="text-purple-400 relative z-10" size={32} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Web Developer</h3>
+                  <h3 className="text-xl font-semibold mb-2">AI & ML Builder</h3>
                   <p className="text-slate-400">
-                    Experienced in building modern web applications using React, Next.js, and other cutting-edge technologies.
+                    I build applied AI systems with real impact, working on medical imaging, LLM-powered applications, and climate analytics using modern AI and ML pipelines.
                   </p>
                 </div>
               </div>
@@ -114,9 +96,9 @@ const About: React.FC = () => {
                   <Lightbulb className="text-blue-400 relative z-10" size={32} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Innovative Thinker</h3>
+                  <h3 className="text-xl font-semibold mb-2">Research Mindset</h3>
                   <p className="text-slate-400">
-                    I'm committed to finding creative solutions to complex problems through innovative thinking.
+                    I enjoy research-driven work—reading papers, running experiments, and validating results—supported by hands-on research experience and published work.
                   </p>
                 </div>
               </div>
@@ -135,7 +117,7 @@ const About: React.FC = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Lifelong Learner</h3>
                   <p className="text-slate-400">
-                    I'm committed to lifelong learning, attending workshops, reading research papers, and staying informed about industry trends.
+                    I constantly improve my foundations, explore new tools, and refine systems to build better, scalable, and real-world-ready solutions.
                   </p>
                 </div>
               </div>

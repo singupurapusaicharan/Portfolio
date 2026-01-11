@@ -60,12 +60,33 @@ const Education: React.FC = () => {
     {
       title: "Responsive Web Designing Foundation Certification",
       issuer: "Infosys Springboard"
+    },
+    {
+      title: "Java Certification",
+      issuer: "Infosys Springboard"
+    },
+    {
+      title: "Database Programming with SQL",
+      issuer: "Oracle Academy"
     }
   ];
 
-  const achievements = [
-    "Received first prize in TECHSURGE-2K24 \"Prastuthi\" Idea Pitching event held in BVRIT, Narsapur.",
-    "Got selected as the best project of the year in Prelims of IEEE YESIST12 \"KAUSHALYA\" 2024 Bengalore."
+  const achievements: Array<{ text: string; href?: string }> = [
+    {
+      text: "Received first prize in TECHSURGE-2K24 ‘Prastuthi’ Idea Pitching event held at BVRIT, Narsapur."
+    },
+    {
+      text: "Selected as the best project of the year at the Prelims of IEEE YESIST12 ‘KAUSHALYA’ open house expo 2024."
+    },
+    {
+      text: "Research got accepted in Scopus-indexed IJECE journal, highlighting GAN-based medical imaging for enhanced brain tumor detection.",
+      // Replace this with your exact paper URL if you have it.
+      href: "https://ijece.iaescore.com/"
+    },
+    {
+      text: "Published research on AI-based climate adaptation in IEEE ICCPCT (Kerala), highlighting how technology can make climate data analysis faster and more reliable.",
+      href: "https://ieeexplore.ieee.org/document/10673384"
+    }
   ];
 
   return (
@@ -185,7 +206,22 @@ const Education: React.FC = () => {
                       {achievements.map((achievement, index) => (
                         <li key={index} className="flex items-start group">
                           <span className="inline-block w-2 h-2 rounded-full bg-blue-500 mt-2 mr-3 group-hover:scale-125 transition-transform"></span>
-                          <span className="text-slate-300 group-hover:text-white transition-colors">{achievement}</span>
+                          <span className="text-slate-300 group-hover:text-white transition-colors">
+                            {achievement.text}
+                            {achievement.href && (
+                              <>
+                                {" "}
+                                <a
+                                  href={achievement.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-blue-400 hover:text-blue-300 underline underline-offset-2"
+                                >
+                                  (link)
+                                </a>
+                              </>
+                            )}
+                          </span>
                         </li>
                       ))}
                     </ul>

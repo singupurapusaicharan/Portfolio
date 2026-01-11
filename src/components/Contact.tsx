@@ -24,28 +24,38 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const encodeFormData = (data: Record<string, string>) =>
+    new URLSearchParams(data).toString();
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitError('');
     
     try {
-      // Using EmailJS-like service
-      const serviceID = 'default_service';
-      const templateID = 'template_default';
-      const userID = 'user_yourUserID';
-      
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        to_name: 'Sai Charan',
-        message: formData.message,
-        to_email: 'singupurapusaicharan@gmail.com'
-      };
-      
-      // In a real implementation, you would use EmailJS or a similar service
-      // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Netlify Forms:
+      // - In production on Netlify, this will create a real form submission.
+      // - In local dev, Netlify isn't present; we do a safe no-error fallback.
+      if (import.meta.env.DEV) {
+        await new Promise(resolve => setTimeout(resolve, 600));
+      } else {
+        const body = encodeFormData({
+          'form-name': 'contact',
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        });
+
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body,
+        });
+
+        if (!res.ok) {
+          throw new Error(`Form submission failed: ${res.status}`);
+        }
+      }
       
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', message: '' });
@@ -55,7 +65,7 @@ const Contact: React.FC = () => {
         setSubmitSuccess(false);
       }, 5000);
       
-    } catch (error) {
+    } catch {
       setSubmitError('There was an error sending your message. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -179,7 +189,20 @@ const Contact: React.FC = () => {
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
-              <form onSubmit={handleSubmit} className="card relative overflow-hidden group">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+                className="card relative overflow-hidden group"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden">
+                  <label>
+                    Don’t fill this out if you’re human: <input name="bot-field" />
+                  </label>
+                </p>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 <div className="relative z-10">
@@ -210,7 +233,6 @@ const Contact: React.FC = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="John Doe"
                       />
                     </div>
                     
@@ -226,7 +248,6 @@ const Contact: React.FC = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="john@example.com"
                       />
                     </div>
                     
@@ -242,7 +263,6 @@ const Contact: React.FC = () => {
                         required
                         rows={5}
                         className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="Hello, I'd like to talk about..."
                       ></textarea>
                     </div>
                   </div>

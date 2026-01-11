@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
               <div className="relative bg-slate-900 border-4 border-slate-800 rounded-full w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 overflow-hidden animate-float">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-600/10 mix-blend-overlay"></div>
                 <img 
-                  src="./profile.png" 
+                  src={`${import.meta.env.BASE_URL}profile.png`}
                   alt="Sai Charan" 
                   className="w-full h-full object-cover"
                 />
@@ -101,17 +101,17 @@ const Hero: React.FC = () => {
                 <span className="absolute inset-0 bg-white/10 animate-shimmer group-hover:bg-white/20"></span>
               </motion.a>
               
-              <motion.button
+              <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="group relative flex items-center justify-center gap-4 px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-medium shadow-lg hover:shadow-blue-500/50 transition-all duration-300 overflow-hidden"
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/Portfolio/resume.pdf';
-                  link.download = 'resume.pdf';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
+                href="https://drive.google.com/uc?export=download&id=1LYAV1a4AH1LrUs7oMtTICotEpsCozgJT"
+                target="_blank"
+                rel="noopener noreferrer"
+                onAuxClick={(e) => {
+                  // Ignore middle-click etc.
+                  e.preventDefault();
+                  window.open("https://drive.google.com/file/d/1LYAV1a4AH1LrUs7oMtTICotEpsCozgJT/view?usp=drive_link", "_blank", "noopener,noreferrer");
                 }}
               >
                 <motion.span
@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
                 >
                   Download Resume
                 </motion.span>
-              </motion.button>
+              </motion.a>
             </motion.div>
           </motion.div>
         </div>

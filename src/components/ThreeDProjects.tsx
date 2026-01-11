@@ -24,43 +24,40 @@ const ThreeDProjects: React.FC = () => {
 
   const projects: Project[] = [
     {
+      title: "GAN-Based Brain Tumor Detection",
+      description:
+        "• Fine-tuned VGG19 using transfer learning for brain tumor detection, achieving 94% accuracy with robust evaluation metrics and real-time analysis of brain scans and reducing diagnosis time.\n" +
+        "• Applied data preprocessing techniques and GAN-based augmentation to handle limited and imbalanced datasets.",
+      thumbnail: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1200&q=80",
+      techStack: ["GANs", "VGG19", "Transfer Learning", "Medical Imaging", "Data Preprocessing"],
+      images: [
+        "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1600&q=80",
+      ],
+    },
+    {
+      title: "PDF Quest Hub",
+      description:
+        "• Developed a LLM-powered application enabling users to query and summarize PDFs, reducing manual document analysis time.\n" +
+        "• Integrated LangChain, FAISS, Mistral for accurate, context-aware AI responses, improving Q&A precision.\n" +
+        "• Engineered PDF upload and storage with text extraction and vector embedding, handling documents and queries in test simulations.",
+      thumbnail: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80",
+      techStack: ["LLM", "LangChain", "FAISS", "Mistral", "PDF Processing", "Vector Embeddings"],
+      images: [
+        "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1600&q=80",
+      ],
+    },
+    {
       title: "AI-Powered Climate Change Adaptation and Mitigation",
-      description: "Designed an AI-powered framework for climate change adaptation and mitigation, enhancing climate impact prediction accuracy by 70%. Published findings at the IEEE ICCPCT conference, highlighting the role of collaboration and innovation in tackling climate challenges.",
-      thumbnail: "./placeholder.png",
-      techStack: ["AI", "Climate Change", "Research", "Publication"],
+      description:
+        "• Researched AI-driven frameworks for climate adaptation, contributing to models with up to 70% forecast accuracy improvement.\n" +
+        "• Published research on AI-driven climate change adaptation in IEEE ICCPCT, demonstrating AI’s role in enhancing environmental monitoring and forecasting.",
+      thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+      techStack: ["AI", "Climate", "Forecasting", "Environmental Monitoring", "IEEE ICCPCT"],
       demoLink: "https://ieeexplore.ieee.org/document/10673384",
       githubLink: "https://github.com/singupurapusaicharan",
       images: [
-        "./placeholder.png",
-        "./placeholder.png",
-        "./placeholder.png"
-      ]
-    },
-    {
-      title: "Enhanced Brain Tumor Detection through GAN-based Medical Imaging Analysis",
-      description: "Developed a React.js and Flask-based web application integrating GANs and VGG19 for brain tumor detection, achieving real-time analysis of brain scans and reducing diagnosis time by up to 80%, enhancing workflow efficiency for medical professionals.",
-      thumbnail: "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80",
-      techStack: ["React.js", "Flask", "GANs", "VGG19", "Medical Imaging", "Research"],
-      demoLink: "https://github.com/singupurapusaicharan",
-      githubLink: "https://github.com/singupurapusaicharan",
-      images: [
-        "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80",
-        "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80",
-        "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1180&q=80"
-      ]
-    },
-    {
-      title: "AI Project Management Dashboard",
-      description: "Developed a full-stack AI project management dashboard using Next.js, React, TypeScript, and Tailwind CSS, enabling seamless project tracking, secure user management, and real-time analytics. Integrated SQL-based backend for efficient data handling and authentication.",
-      thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
-      techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "SQL", "Zustand", "Framer Motion"],
-      demoLink: "https://github.com/singupurapusaicharan",
-      githubLink: "https://github.com/singupurapusaicharan",
-      images: [
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80",
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80"
-      ]
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80",
+      ],
     }
   ];
 
@@ -94,8 +91,10 @@ const ThreeDProjects: React.FC = () => {
   };
 
   return (
-    <section id="3d-projects" className="py-20 bg-gradient-to-b from-slate-900 to-slate-950 relative">
+    <section id="projects" className="py-20 bg-gradient-to-b from-slate-900 to-slate-950 relative">
       <div className="section-container relative z-10">
+        {/* Backwards-compatible anchor (older links/bookmarks) */}
+        <div id="3d-projects" className="sr-only" aria-hidden="true" />
         <motion.div
           ref={ref}
           variants={containerVariants}
@@ -174,7 +173,7 @@ const ThreeDProjects: React.FC = () => {
                     </button>
 
                     <h2 className="text-3xl font-bold text-white mb-6">{selectedProject.title}</h2>
-                    <p className="text-slate-300 mb-8 leading-relaxed">{selectedProject.description}</p>
+                    <p className="text-slate-300 mb-8 leading-relaxed whitespace-pre-line">{selectedProject.description}</p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                       {selectedProject.images?.map((image, i) => (

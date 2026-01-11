@@ -6,14 +6,15 @@ const Particles: React.FC = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    const canvasEl = canvas;
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     // Set canvas dimensions
     const setCanvasDimensions = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvasEl.width = window.innerWidth;
+      canvasEl.height = window.innerHeight;
     };
 
     setCanvasDimensions();
@@ -33,8 +34,8 @@ const Particles: React.FC = () => {
       distance: number = 0;
 
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+        this.x = Math.random() * canvasEl.width;
+        this.y = Math.random() * canvasEl.height;
         this.originalX = this.x;
         this.originalY = this.y;
         this.size = Math.random() * 3 + 0.5;
@@ -50,11 +51,13 @@ const Particles: React.FC = () => {
       update(mouseX: number | null, mouseY: number | null) {
         // Mouse interaction
         if (mouseX !== null && mouseY !== null) {
-          let dx = mouseX - this.x;
-          let dy = mouseY - this.y;
+          const dx = mouseX - this.x;
+          const dy = mouseY - this.y;
           let distance = Math.sqrt(dx * dx + dy * dy);
           this.distance = distance;
           
+          // Avoid divide-by-zero when the cursor overlaps exactly.
+          if (distance === 0) distance = 0.0001;
           const forceDirectionX = dx / distance;
           const forceDirectionY = dy / distance;
           const maxDistance = 100;
@@ -79,10 +82,10 @@ const Particles: React.FC = () => {
           this.y += this.speedY;
 
           // Bounce off edges
-          if (this.x > canvas.width || this.x < 0) {
+          if (this.x > canvasEl.width || this.x < 0) {
             this.speedX = -this.speedX;
           }
-          if (this.y > canvas.height || this.y < 0) {
+          if (this.y > canvasEl.height || this.y < 0) {
             this.speedY = -this.speedY;
           }
         }
@@ -109,15 +112,18 @@ const Particles: React.FC = () => {
     let mouseX: number | null = null;
     let mouseY: number | null = null;
 
-    window.addEventListener('mousemove', (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       mouseX = e.x;
       mouseY = e.y;
-    });
+    };
 
-    window.addEventListener('mouseout', () => {
+    const handleMouseOut = () => {
       mouseX = null;
       mouseY = null;
-    });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseout', handleMouseOut);
 
     // Connect particles with lines
     function connect() {
@@ -156,7 +162,7 @@ const Particles: React.FC = () => {
     // Animation loop
     function animate() {
       if (!ctx) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
       
       for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update(mouseX, mouseY);
@@ -172,8 +178,8 @@ const Particles: React.FC = () => {
     // Clean up
     return () => {
       window.removeEventListener('resize', setCanvasDimensions);
-      window.removeEventListener('mousemove', () => {});
-      window.removeEventListener('mouseout', () => {});
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseout', handleMouseOut);
     };
   }, []);
 
